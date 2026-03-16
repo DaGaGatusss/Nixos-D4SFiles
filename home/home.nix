@@ -137,6 +137,7 @@
   # };
   # ── Variables de entorno de usuario ───────────────────────────────────>
   home.sessionVariables = {
-    EDITOR = "helix";   # helix como editor por defecto
+    EDITOR = "hx";
+    VISUAL = "hx";
     };
 }

@@ -25,12 +25,12 @@
       };
     };
 
-    keymap = {
-      manager.prepend_keymap = [
-        { on = [ "g" "l" ]; run = "plugin lazygit"; desc = "Abrir lazygit"; }
-        { on = [ "S" ];     run = "plugin sudo";    desc = "Abrir con sudo"; }
-      ];
-    };
+#    keymap = {
+#      manager.prepend_keymap = [
+#        { on = [ "g" "l" ]; run = "plugin lazygit"; desc = "Abrir lazygit"; }
+#        { on = [ "S" ];     run = "plugin sudo";    desc = "Abrir con sudo"; }
+#      ];
+#    };
 
     theme = {
       manager = {
@@ -46,7 +46,7 @@
     };
   };
 
-  # Plugins instalados via home.file para evitar conflictos de main.lua
+  # Plugins
   home.file = {
     ".config/yazi/plugins/starship.yazi".source = pkgs.yaziPlugins.starship;
     ".config/yazi/plugins/lazygit.yazi".source  = pkgs.yaziPlugins.lazygit;
