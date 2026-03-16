@@ -84,8 +84,6 @@ boot.extraModulePackages = with config.boot.kernelPackages;
     programs.zsh = {
     enable = true;
      };
-  #Brightness
-    programs.light.enable = true;
 
   #dconf (necesario para GTK apps)
     programs.dconf.enable = true;
@@ -131,6 +129,7 @@ boot.extraModulePackages = with config.boot.kernelPackages;
     # Los paquetes de usuario ahora van en home.nix
   };
   environment.systemPackages = with pkgs; [
+    brightnessctl
     git      
     wget
     ntfs3g

@@ -5,6 +5,8 @@
     ./helix.nix
     ./yazi.nix
     ./git.nix
+    ./i3.nix
+    ./i3blocks.nix
   ];
   home.username = "d4s";
   home.homeDirectory = "/home/d4s";

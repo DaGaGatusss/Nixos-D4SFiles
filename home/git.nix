@@ -3,16 +3,16 @@
   
 programs.git = {
   enable  = true;
-  userName = "d4s";
-  userEmail = "dsgarciacv@gmail.com";
-  extraConfig ={
-    init.defaulBranch = "main";
-    push.autoSetupRemote = true;
-    core.editor = "hx";
-  };
-  aliases = {
-    st = "status";
-    lg = "log --oneline --graph";
+  settings = {
+      alias = {
+        st = "status";
+        lg = "log --oneline --graph";
+       };
+      user.name = "d4s";
+      user.email = "dsgarciacv@gmail.com";
+      init.defaultBranch = "main";
+      push.autoSetupRemote = true;
+      core.editor = "hx";  
   };
 };
 
@@ -29,6 +29,7 @@ programs.lazygit = {
 };
 
 programs.ssh = {
+  enableDefaultConfig = false;
   enable = true;
   matchBlocks."github.com" = {
     identityFile = "~/.ssh/id_ed25519";

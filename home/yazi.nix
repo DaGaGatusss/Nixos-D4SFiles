@@ -3,7 +3,7 @@
 {
   programs.yazi = {
     enable = true;
-
+    shellWrapperName = "yy";
     initLua = ''
       require("starship"):setup()
     '';
