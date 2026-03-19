@@ -2,16 +2,12 @@
 {
   xsession.windowManager.i3 = {
     enable = true;
+    
     extraConfig = ''
       for_window [class="^.*"] border pixel 3
       client.focused #444444 #bf7500 #444444 #ffff70
-
-      for_window [title="^zoom\s?$"] floating enable
-      for_window [title="Zoom Meeting"] floating enable
-      for_window [title="Zoom Cloud Meetings"] floating enable
-      for_window [class="^zoom$"] floating enable
-      for_window [class="zoom" title="Annotation"] floating enable
     '';
+  
     config = {
       modifier = "Mod4";
       terminal = "kitty";
@@ -31,16 +27,16 @@
         { command = "picom -b"; always = true; notification = false; }
         { command = "copyq"; notification = false; }
         { command = "blueman-applet"; notification = false; }
-        { command = "sh -c 'sleep 1 && setxkbmap -layout us,latam'"; notification = false; }
+        { command = "sh -c 'sleep 1 && setxkbmap -layout us,latam'"; notification = true; }
       ];
 
       keybindings = let
         mod = "Mod4";
         alt = "Mod1";
-        refresh = "killall -SIGUSR1 i3status";
+
       in {
         # Volumen
-        "XF86AudioMicMute"     = "exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && ${refresh}";
+        "XF86AudioMicMute"     = "exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle";
         "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && ~/.config/i3/scripts/volume-notify.sh";
         "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && ~/.config/i3/scripts/volume-notify.sh";
         "XF86AudioMute"        = "exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && ~/.config/i3/scripts/volume-notify.sh";

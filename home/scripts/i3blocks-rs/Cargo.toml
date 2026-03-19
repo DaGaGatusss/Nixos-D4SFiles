@@ -1,0 +1,20 @@
+[package]
+name = "i3blocks-rs"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "cpu"
+path = "src/bin/cpu.rs"
+
+[[bin]]
+name = "memoria"
+path = "src/bin/memoria.rs"
+
+[[bin]]
+name = "bateria"
+path = "src/bin/bateria.rs"
+
+[dependencies]
+sysinfo = "0.32"
+battery = "0.7"

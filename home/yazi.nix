@@ -3,13 +3,15 @@
 {
   programs.yazi = {
     enable = true;
-    shellWrapperName = "yy";
+    enableZshIntegration  = true;
+    shellWrapperName = "y";
+    
     initLua = ''
       require("starship"):setup()
     '';
 
     settings = {
-      manager = {
+      mgr = {
         show_hidden    = true;
         show_symlink   = true;
         sort_by        = "natural";
@@ -19,8 +21,8 @@
       preview = {
         image_filter  = "lanczos3";
         image_quality = 90;
-        max_width     = 1200;
-        max_height    = 900;
+        max_width     = 1000;
+        max_height    = 1000;
         pdf_pages     = 5;
       };
     };
