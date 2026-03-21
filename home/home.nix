@@ -1,4 +1,4 @@
-{ config, pkgs, ...}:
+{ pkgs, ...}:
 
 {
   imports = [
@@ -24,6 +24,9 @@
     #Leguajes
     python3
     gcc
+    rustc
+    cargo
+    rust-analyzer
     #Terminal ultis
     tree
     starship
@@ -64,7 +67,6 @@
     #Navigate and vpn
     firefox
     chromium
-    riseup-vpn
     #i3-utils
     rofi
     picom

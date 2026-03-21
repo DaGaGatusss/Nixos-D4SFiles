@@ -12,9 +12,9 @@
 
     settings = {
       mgr = {
-        show_hidden    = true;
+        show_hidden    = false;
         show_symlink   = true;
-        sort_by        = "natural";
+        sort_by        = "extension";
         sort_dir_first = true;
       };
 

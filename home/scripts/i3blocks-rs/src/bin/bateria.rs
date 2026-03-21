@@ -93,5 +93,5 @@ fn main() {
     // Exit code 33 = fondo rojo en i3blocks (batería crítica)
     if percent < 10.0 {
         std::process::exit(33);
-    }
+    } 
 }
