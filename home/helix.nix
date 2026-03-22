@@ -22,6 +22,7 @@
     bash-language-server
     clang-tools
     ty
+    taplo
     marksman
     yaml-language-server
   ];

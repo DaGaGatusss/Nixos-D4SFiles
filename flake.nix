@@ -12,10 +12,10 @@
       system = "x86_64-linux";
     in {
       # Configuración de NixOS
-      nixosConfigurations.mymachine = nixpkgs.lib.d4s {
+      nixosConfigurations.d4s = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          ./hosts/mymachine/configuration.nix
+          ./hosts/d4s/configuration.nix
 
           # Integración de Home Manager como módulo de NixOS
           home-manager.nixosModules.home-manager
