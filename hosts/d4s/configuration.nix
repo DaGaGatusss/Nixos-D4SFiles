@@ -22,6 +22,15 @@
     systemd-boot.enable =true;
     efi.canTouchEfiVariables = true;
   };
+
+  boot.supportedFilesystems = ["exfat"];
+  # Mount filesystems exfat external disks
+  fileSystems."/mnt/fujitsu" = {
+    device = "/dev/disk/by-uuid/FF5D-B3F9";
+    fsType = "exfat";
+    options = ["nofail" "uid=1000" "gid=1000"];
+  };
+
   #Kernel modules
 boot.extraModulePackages = with config.boot.kernelPackages;
   [ v4l2loopback.out ];
@@ -141,6 +150,7 @@ boot.extraModulePackages = with config.boot.kernelPackages;
     pulseaudioFull
     epson-escpr  # driver impresora (nivel sistema)
     helix
+    exfatprogs
   ];
 
   environment.variables = {
