@@ -6,7 +6,6 @@
 //   línea 3: color hex
 
 use std::thread;
-use std::time::Duration;
 use sysinfo::System;
 
 const COLOR_NORMAL:   &str = "#dfd932";

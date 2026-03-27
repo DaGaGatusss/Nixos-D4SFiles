@@ -94,6 +94,7 @@
     kdePackages.kdenlive
     gimp3-with-plugins
     inkscape
+    godotPackages_4_6.godot
   ];
   
   #zsh
