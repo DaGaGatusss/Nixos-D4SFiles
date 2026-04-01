@@ -34,8 +34,8 @@
     fastfetch
     yazi          # file manager TUI
     android-tools # adb, fastboot
+    timg          # picture view
     #Desktop
-    viewnior
     nitrogen
     arandr 
     #Audio
@@ -72,7 +72,6 @@
     picom
     btop
     dmenu
-    i3status
     i3lock
     i3blocks
     libnotify
@@ -90,7 +89,6 @@
     vlc
     thunderbird
     obs-studio
-    pcmanfm
     kdePackages.kdenlive
     gimp3-with-plugins
     inkscape
@@ -144,3 +142,4 @@
     VISUAL = "hx";
     };
 }
+              
