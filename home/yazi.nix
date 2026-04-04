@@ -19,14 +19,16 @@
           };
 
       opener = {
-        xopp = [{run = "flatpak run com.github.xournalpp.xournalpp $1"; desc = "Xournal++"; orphan = true; for = "linux";}];
+        xopp = [{run = "flatpak run com.github.xournalpp.xournalpp %s"; desc = "Xournal++"; orphan = true; for = "linux";}];
+        zathura =[{run = "zathura %s"; desc = "Zathura"; orphan = true; for = "linux";}];
       };
 
       open = {
         prepend_rules = [
             {url = "*.xopp"; use = "xopp";}
             {mime = "application/x-xopp"; use = "xopp";}
-
+            
+            {url = "*.epub"; use = "zathura";}
           ];
       };
       
