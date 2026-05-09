@@ -21,20 +21,23 @@
     lazygit
     vscode
     gh
+    jetbrains.idea-oss
     #Leguajes
     python3
     gcc
+    jdk25
     rustc
     cargo
     rust-analyzer
     #Terminal ultis
     tree
+    lshw
+    bc
     starship
     fd
     fastfetch
     yazi          # file manager TUI
     android-tools # adb, fastboot
-    timg          # picture view
     #Desktop
     nitrogen
     arandr 
@@ -86,7 +89,11 @@
     keepassxc
     zoom-us
     droidcam
-    vlc
+    mpv
+    ##Scaner
+    simple-scan
+    viewnior
+    yt-dlp
     thunderbird
     obs-studio
     kdePackages.kdenlive
@@ -116,26 +123,6 @@
     programs.lazygit = {
       enable = true;
     };
-    # Puedes agregar aliases aquí en el futuro:
-    # shellAliases = {
-    #   ll = "eza -la";
-    #   cat = "bat";
-    # };
-  # ── Git ───────────────────────────────────────────────────────────────>
-  # Configura aquí tus datos si aún no tienes ~/.gitconfig
-  # programs.git = {
-  #   enable = true;
-  #   userName = "Tu Nombre";
-  #   userEmail = "tu@email.com";
-  # };
-  # ── Kitty ─────────────────────────────────────────────────────────────>
-  # Si en el futuro quieres manejar la config de kitty desde home-manager:
-  # programs.kitty = {
-  #   enable = true;
-  #   font.name = "JetBrainsMono Nerd Font";
-  #   font.size = 12;
-  #   theme = "Tokyo Night";
-  # };
   # ── Variables de entorno de usuario ───────────────────────────────────>
   home.sessionVariables = {
     EDITOR = "hx";

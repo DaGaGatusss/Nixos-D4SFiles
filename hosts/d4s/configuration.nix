@@ -6,7 +6,7 @@
     ];
   #Experimental Feactures
   nix.settings.experimental-features = ["nix-command" "flakes"];
-  #Nix Steore Optimice $ GC
+  #Nix Store Optimice $ GC
     nix = {
       settings ={
         auto-optimise-store = true;
@@ -24,6 +24,7 @@
   };
 
   boot.supportedFilesystems = ["exfat"];
+
   # Mount filesystems exfat external disks
   fileSystems."/mnt/fujitsu" = {
     device = "/dev/disk/by-uuid/FF5D-B3F9";
@@ -75,6 +76,12 @@ boot.extraModulePackages = with config.boot.kernelPackages;
     variant = "";
     options = "grp:alt_shift_toggle";
   };
+  #services.timesyncd = {
+    #enable = true;
+    #servers = null;
+    #fallbackServers = [ "0.nixos.pool.ntp.org" "1.nixos.pool.ntp.org" ];
+  #};
+
   #x11 and i3
   services.xserver = {
     enable = true;
@@ -113,11 +120,19 @@ boot.extraModulePackages = with config.boot.kernelPackages;
     enable = true;
     drivers = [ pkgs.epson-escpr pkgs.epson-escpr2 ];
   };
+  ##Printing for netnetworking
   services.avahi = {
     enable = true;
     nssmdns4 = true;
     openFirewall = true;
   };
+  ##-----Scaner-----
+  hardware.sane = {
+  enable = true;
+  extraBackends =[pkgs.epkowa];
+};
+  
+  
   #storage and file management
   services.udisks2.enable = true;
   services.gvfs.enable = true;
@@ -133,7 +148,7 @@ boot.extraModulePackages = with config.boot.kernelPackages;
   users.users.d4s = {
     isNormalUser = true;
     description = "D4S";
-    extraGroups = [ "networkmanager" "wheel" "users" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "users" "video" "scanner" "lp" ];
     shell = pkgs.zsh;
     # Los paquetes de usuario ahora van en home.nix
   };

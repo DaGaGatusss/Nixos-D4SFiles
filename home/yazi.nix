@@ -21,14 +21,17 @@
       opener = {
         xopp = [{run = "flatpak run com.github.xournalpp.xournalpp %s"; desc = "Xournal++"; orphan = true; for = "linux";}];
         zathura =[{run = "zathura %s"; desc = "Zathura"; orphan = true; for = "linux";}];
+        viewnior = [{run = "viewnior %s"; desc = "Viewnior"; orphan = true; for = "linux";}];
+        onlyoffice =[{run = "flatpak run org.onlyoffice.desktopeditors %s"; desc ="office"; orphan = true; for = "linux";}];
       };
 
       open = {
         prepend_rules = [
             {url = "*.xopp"; use = "xopp";}
             {mime = "application/x-xopp"; use = "xopp";}
-            
+            {url = "*.pptx"; use = "onlyoffice";}
             {url = "*.epub"; use = "zathura";}
+            {mime = "image/*"; use = "viewnior";}
           ];
       };
       
